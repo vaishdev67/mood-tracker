@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mood Tracker</h1>
+            <p class="date-display">Today is <span id="current-date"></span></p>
+        </header>
+
+        <main>
+            <div id="mood-selection" class="card">
+                <h2>How are you feeling today?</h2>
+                <div class="mood-options">
+                    <button class="mood-btn" data-mood="happy">😊 Happy</button>
+                    <button class="mood-btn" data-mood="sad">😢 Sad</button>
+                    <button class="mood-btn" data-mood="angry">😠 Angry</button>
+                    <button class="mood-btn" data-mood="meh">😐 Meh</button>
+                </div>
+            </div>
+
+            <div id="note-section" class="card hidden">
+                <h2>Why do you feel <span id="selected-mood"></span> today?</h2>
+                <textarea id="mood-note" placeholder="Share your thoughts..." rows="4"></textarea>
+                <button id="save-btn">Save Entry</button>
+                <button id="back-btn" class="secondary">Back</button>
+            </div>
+
+            <div id="stats-section" class="card hidden">
+                <h2>Your Weekly Mood Summary</h2>
+                <div class="stats-container">
+                    <div class="chart">
+                        <canvas id="mood-chart"></canvas>
+                    </div>
+                    <div class="stats-details">
+                        <h3>Mood Distribution</h3>
+                        <div id="mood-stats"></div>
+                        <h3>Common Words</h3>
+                        <div id="common-words"></div>
+                        <h3>Tips</h3>
+                        <div id="tips"></div>
+                    </div>
+                </div>
+                <button id="new-entry-btn" class="secondary">Add New Entry</button>
+            </div>
+
+            <div id="history-section" class="card">
+                <h2>Your Mood History</h2>
+                <div id="history-list"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
